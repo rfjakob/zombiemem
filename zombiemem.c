@@ -22,6 +22,7 @@ void* spin(__attribute__((__unused__)) void* arg)
         perror("malloc failed");
         exit(1);
     }
+    // the memset ensures the memory is actually allocated
     memset(p, 123, size);
     printf("sub thread (pid %d) now uses 1 GiB of memory. Sleeping.\n", gettid());
     while(1) {
